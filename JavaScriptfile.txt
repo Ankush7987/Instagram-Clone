@@ -1,0 +1,123 @@
+var arr= [
+    {profile: "https://images.unsplash.com/photo-1615022702095-ff2c036f3360?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "Ankush79"},
+    {profile: "https://images.unsplash.com/photo-1622782262026-6a327a45014f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "aakash09"},
+    {profile: "https://images.unsplash.com/photo-1623091411395-09e79fdbfcf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "lazy-coder"},
+    {profile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "abhinay"},
+    {profile: "https://images.unsplash.com/photo-1622049605334-72e1e4432346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "ankit66"},
+    {profile: "https://images.unsplash.com/photo-1622782045716-a05bcc4f5ae8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "chaurasiya"},
+    {profile: "https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "pawar69"},
+    {profile: "https://images.unsplash.com/photo-1630539625531-13d781ebb4ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "panday00"},
+    {profile: "https://images.unsplash.com/photo-1623091410901-00e2d268901f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "bhaumik098"},
+    {profile: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "bajgfaf"},
+    {profile: "https://images.unsplash.com/photo-1624610261655-777af2f586d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "jahfha"},
+    {profile: "https://images.unsplash.com/photo-1622782262171-7eacb25db001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "makda"},
+    {profile: "https://images.unsplash.com/photo-1619286188088-de820bdc1230?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "bakchod"},
+    {profile: "https://images.unsplash.com/photo-1624610806703-99c0852c31c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "chutiya69"},
+]
+
+var clutter = "";
+var grow =0;
+arr.forEach(function(dets, index){
+    clutter += `
+    <div class="story">
+    <img id= "${index}" src="${dets.profile}" alt="">
+    <p>${dets.username}</p>
+  </div>`
+})
+document.querySelector("#storiya").innerHTML = clutter;
+document.querySelector("#storiya").addEventListener("click", function(data){
+  if(data.target.id != undefined){
+    document.querySelector(".story-div").style.display = "block";
+    document.querySelector(".story-div").style.backgroundImage = `url(${arr[data.target.id].profile})`
+    setTimeout(function(){
+    document.querySelector(".story-div").style.display = "none";
+    }, 2000)}
+    if(grow<100){
+    setInterval(function(){
+        document.querySelector(".fill").style.width =  `${grow++}%`;
+    },20)
+    }
+    else{
+        grow =0;
+    }
+    // console.log(arr[data.target.id]);
+})
+
+
+
+var arr2= [
+    {profile: "https://images.unsplash.com/photo-1615022702095-ff2c036f3360?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "Ankush79", profession: "Developer"},
+    {profile: "https://images.unsplash.com/photo-1622782262026-6a327a45014f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "aakash09", profession: "Softeware Engineer"},
+    {profile: "https://images.unsplash.com/photo-1623091411395-09e79fdbfcf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "lazy-coder", profession: "Frontend Developer"},
+    {profile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "abhinay", profession: "Backend Developor"},
+    {profile: "https://images.unsplash.com/photo-1622049605334-72e1e4432346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "ankit66", profession: "UI Designer"},
+    {profile: "https://images.unsplash.com/photo-1622782045716-a05bcc4f5ae8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "chaurasiya", profession: "MArketing"},
+    {profile: "https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "pawar69", profession: "Managment"},
+    {profile: "https://images.unsplash.com/photo-1630539625531-13d781ebb4ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "panday00", profession: "Social Medea Marketing"},
+    {profile: "https://images.unsplash.com/photo-1623091410901-00e2d268901f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", username: "bhaumik098", profession: "Affiliate Marketing"},
+    {profile: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "bajgfaf", profession: "Teacher"},
+    {profile: "https://images.unsplash.com/photo-1624610261655-777af2f586d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "jahfha", profession: "Doctor"},
+    {profile: "https://images.unsplash.com/photo-1622782262171-7eacb25db001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "makda", profession: "IAS Officer"},
+    {profile: "https://images.unsplash.com/photo-1619286188088-de820bdc1230?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "bakchod", profession: "Police"},
+    {profile: "https://images.unsplash.com/photo-1624610806703-99c0852c31c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGluZGlhbiUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", username: "chutiya69", profession: "Fasion Designer"},
+]
+function cardprinter(){
+var clutter2= "";
+arr2.forEach(function(details, idx){
+    clutter2 += `
+    <div class="card">
+    <div class="card-nav">
+      <div class="card-profile">
+        <img id= "${idx}" src="${details.profile}" alt="">
+        <div class="card-username">
+          <h6>${details.username}</h6>
+          <p>${details.profession}</p>
+        </div>
+        </div>
+      <div class="more"><i class="ri-more-line"></i></div>
+    </div>
+    <div class="post" >
+      <img "${idx}" src="${details.profile}" alt="">
+      <div class="heart-post">
+            <i class="ri-heart-3-fill"></i>
+          </div>
+    </div>
+    <div class="card-icon">
+      <div class="like">
+        <i class="ri-heart-line"></i>
+        <i class="ri-chat-3-line"></i>
+        <i class="ri-send-plane-fill"></i>
+      </div>
+      <div class="save">
+        <i class="ri-bookmark-line"></i>
+      </div>
+    </div>
+    <div class="like-count">
+      <h6>0 likes</h6>
+    </div>
+  </div>`
+})
+
+document.querySelector("#card-div").innerHTML = clutter2;
+}
+cardprinter();
+ 
+document.querySelector("#card-div").addEventListener("click", function(fff){
+    document.querySelector(".story-div").style.display = "initial";
+    document.querySelector(".story-div").style.backgroundImage = `url(${arr[fff.target.id].profile})`;
+    setTimeout(function(){
+        document.querySelector(".story-div").style.display = "none";
+        }, 2000)
+        if(grow<100){
+        setInterval(function(){
+            document.querySelector(".fill").style.width =  `${grow++}%`;
+        },20)
+        }
+        else{
+            grow =0;
+        }
+
+    // console.log("hey");
+})
+
+
