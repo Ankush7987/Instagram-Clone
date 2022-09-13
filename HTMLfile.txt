@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="main">
+
+    <!-- // This code for Nav Bar -->
+    <div id="nav">
+      <div class="insta-img">
+        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="">
+      </div>
+      <div class="search">
+        <i class="ri-search-line"></i>
+        <input type="text" placeholder="Search">
+      </div> 
+      <div class="icons">
+        <i class="ri-home-4-fill"></i>
+        <i class="ri-messenger-line"></i>
+        <i class="ri-chat-new-fill"></i>
+        <i class="ri-compass-3-line"></i>
+        <i class="ri-heart-line"></i>
+        <div class="profile"></div>
+      </div>
+    </div>
+
+    <!-- This Cde for Story Profils -->
+    <div id="storiya">
+      
+    </div>
+
+    <!-- This Code for Story View  -->
+    <div class="story-div">
+      <div class="line">
+        <div class="fill"></div>
+      </div>
+    </div>
+    <div id="card-div"></div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
